@@ -1,1 +1,54 @@
+# Performance Evaluation Report
+
+## Project Overview
+
+The objective of this project was to evaluate and optimize machine learning models for house price prediction using a preprocessed housing dataset. Two baseline regression models were trained and compared, followed by hyperparameter tuning using GridSearchCV.
+
+## Models Evaluated
+
+1. Linear Regression
+2. Decision Tree Regressor
+3. Tuned Decision Tree Regressor
+
+## Evaluation Metrics
+
+The following regression metrics were used:
+
+1. Mean Absolute Error (MAE)
+2. Mean Squared Error (MSE)
+3. R-squared Score (R²)
+
+## Metric Justification
+
+1. MAE measures the average prediction error.
+2. MSE penalizes larger prediction errors.
+3. R² indicates how well the model explains the variability of the target variable.
+
+## Results
+
+-----------------------------------------------------
+| Model               | MAE   | MSE      | R² Score |
+| ------------------- | ----- | -------- | -------- |
+| Linear Regression   | 40.39 | 9414.30  | 0.524    |
+| Decision Tree       | 35.84 | 13359.74 | 0.324    |
+| Tuned Decision Tree | 38.15 | 8870.08  | 0.551    |
+-----------------------------------------------------
+
+Hyperparameter Tuning
+
+GridSearchCV was applied to the Decision Tree Regressor using the following parameters:
+
+1. max_depth: [5, 10, 15, 20]
+2. min_samples_split: [2, 5, 10]
+3. min_samples_leaf: [1, 2, 4]
+
+Best Parameters:
+
+1. max_depth = 5
+2. min_samples_split = 10
+3. min_samples_leaf = 4
+
+## Conclusion
+
+The baseline Decision Tree model showed poor generalization compared to Linear Regression. After hyperparameter tuning, the Decision Tree achieved the highest R² score of 0.551 and the lowest MSE among all evaluated models. Therefore, the Tuned Decision Tree Regressor was selected as the final model for house price prediction.
 
